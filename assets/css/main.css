@@ -82,8 +82,8 @@ input, select, textarea {
 	}
 
 	body {
-		background: #D4D9DD url("images/bg03.jpg");
-		color: #474f51;
+		background: black;
+		color: #fff;
 		font-size: 13.5pt;
 		font-family: 'Yanone Kaffeesatz';
 		line-height: 1.85em;
@@ -1511,10 +1511,9 @@ input, select, textarea {
 
 	#header {
 		position: relative;
-		background: #3B4346 url("images/bg01.jpg");
+		background: black;
 		border-bottom: solid 1px #272d30;
 		box-shadow: inset 0px -1px 0px 0px #51575a;
-		text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75);
 	}
 
 		#header > .container {
@@ -1542,7 +1541,7 @@ input, select, textarea {
 		}
 
 			#header nav a {
-				color: #c6c8c8;
+				color: #fff;
 				text-decoration: none;
 				font-size: 1.4em;
 				margin-left: 60px;
@@ -1581,11 +1580,17 @@ input, select, textarea {
 /* Features */
 
 	#features {
-		background: #353D40 url("images/bg02.jpg");
+		background: dimgray;
 		border-bottom: solid 1px #272e31;
 		padding: 45px 0 45px 0;
-		text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75);
-		color: #a0a8ab;
+		color: #fff;
+	}
+
+	#features section {
+		background: black;
+		padding: 40px 30px 45px 30px;
+		box-shadow: 2px 2px 2px 1px rgba(128, 128, 128, 0.1);
+		margin: 0 0 25px 0;
 	}
 
 		#features h2 {
@@ -1605,13 +1610,13 @@ input, select, textarea {
 /* Content */
 
 	#content {
-		background: #f7f7f7 url("images/bg04.png");
+		background: dimgray;
 		border-top: solid 1px #fff;
 		padding: 45px 0 45px 0;
 	}
 
 		#content section {
-			background: #fff;
+			background: black;
 			padding: 40px 30px 45px 30px;
 			box-shadow: 2px 2px 2px 1px rgba(128, 128, 128, 0.1);
 			margin: 0 0 25px 0;
@@ -1619,12 +1624,12 @@ input, select, textarea {
 
 		#content h2 {
 			font-size: 1.8em;
-			color: #373f42;
+			color: #fff;
 			margin: 0 0 0.25em 0;
 		}
 
 		#content h3 {
-			color: #96a9b5;
+			color: #fff;
 			font-size: 1.25em;
 		}
 
@@ -1637,34 +1642,32 @@ input, select, textarea {
 		}
 
 		#content .quote-list li {
-			border-bottom: solid 1px #e2e6e8;
+			border-bottom: solid 1px #fff;
 		}
 
 		#content .link-list li {
-			border-bottom: solid 1px #e2e6e8;
+			border-bottom: solid 1px #fff;
 		}
 
 		#content .check-list li {
-			border-bottom: solid 1px #e2e6e8;
+			border-bottom: solid 1px #fff;
 		}
 
 /* Footer */
 
 	#footer {
 		padding: 45px 0 45px 0;
-		text-shadow: 1px 1px 1px white;
-		color: #546b76;
-		text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+		color: #fff;
 	}
 
 		#footer h2 {
 			font-size: 1.25em;
-			color: #212f35;
+			color: #fff;
 			margin: 0 0 1em 0;
 		}
 
 		#footer a {
-			color: #546b76;
+			color: #fff;
 		}
 
 		#footer .quote-list li {
@@ -1689,12 +1692,11 @@ input, select, textarea {
 		box-shadow: inset 0px 1px 0px 0px #e0e4e7;
 		text-align: center;
 		padding: 45px 0 80px 0;
-		color: #8d9ca3;
-		text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+		color: #fff;
 	}
 
 		#copyright a {
-			color: #8d9ca3;
+			color: #fff;
 		}
 
 /* Large */
