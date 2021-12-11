@@ -1609,47 +1609,47 @@ input, select, textarea {
 
 /* Content */
 
-	#content {
+	.content {
 		background: dimgray;
 		border-top: solid 1px #fff;
 		padding: 45px 0 45px 0;
 	}
 
-		#content section {
+		.content section {
 			background: black;
 			padding: 40px 30px 45px 30px;
 			box-shadow: 2px 2px 2px 1px rgba(128, 128, 128, 0.1);
 			margin: 0 0 25px 0;
 		}
 
-		#content h2 {
+		.content h2 {
 			font-size: 1.8em;
 			color: #fff;
 			margin: 0 0 0.25em 0;
 		}
 
-		#content h3 {
+		.content h3 {
 			color: #fff;
 			font-size: 1.25em;
 		}
 
-		#content a {
+		.content a {
 			color: #ED391B;
 		}
 
-		#content header {
+		.content header {
 			margin: 0 0 2em 0;
 		}
 
-		#content .quote-list li {
+		.content .quote-list li {
 			border-bottom: solid 1px #fff;
 		}
 
-		#content .link-list li {
+		.content .link-list li {
 			border-bottom: solid 1px #fff;
 		}
 
-		#content .check-list li {
+		.content .check-list li {
 			border-bottom: solid 1px #fff;
 		}
 
@@ -1759,15 +1759,15 @@ input, select, textarea {
 
 		/* Content */
 
-			#content h2 {
+			.content h2 {
 				font-size: 1.4em;
 			}
 
-			#content h3 {
+			.content h3 {
 				font-size: 1.1em;
 			}
 
-			#content header {
+			.content header {
 				margin: 0 0 1.25em 0;
 			}
 
@@ -1799,7 +1799,7 @@ input, select, textarea {
 
 		/* Content */
 
-			#content {
+			.content {
 				padding: 25px 0;
 			}
 
@@ -1995,19 +1995,19 @@ input, select, textarea {
 
 		/* Content */
 
-			#content section {
+			.content section {
 				padding: 30px 20px;
 			}
 
-			#content h2 {
+			.content h2 {
 				font-size: 1.25em;
 			}
 
-			#content h3 {
+			.content h3 {
 				font-size: 1em;
 			}
 
-			#content header {
+			.content header {
 				margin: 0 0 1.25em 0;
 			}
 

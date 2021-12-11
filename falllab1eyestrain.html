@@ -6,15 +6,17 @@
 -->
 <html>
 	<head>
-		<title>Winter Quarter Quarter - Liam A. Fisher's Portfolio</title>
+		<title>Eyestrain - The Hitchhiker's Guide to Choosing Darkmode - Liam A. Fisher's Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="Lab Assets/Lab 1 Assets/rulesandregs.css">
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script src="Lab Assets/Lab 1 Assets/modestorage.js"></script>
 	</head>
 	<body class="subpage">
 		<div id="page-wrapper">
@@ -33,7 +35,7 @@
 									<a href="index.html">Homepage</a>
 									<a href="undergrad.html">Undergraduate Work</a>
 									<a href="fall.html">Fall Quarter</a>
-									<a href="#">Winter Quarter</a>
+									<a href="winter.html">Winter Quarter</a>
 									<a href="capstone.html">Capstone</a>
 									<a href="aboutme.html">About Me</a>
 								</nav>
@@ -50,12 +52,30 @@
 							<div class="col-12">
 
 								<!-- Main Content -->
-									<section>
-										<header>
-											<h2>Winter Quarter</h2>
-											<h3>A Look at What's to Come</h3>
-										</header>
-										<p>In the winter quarter, I will be studying the use of python in spatial analysis, and the proper practices in developing web maps for mobile devices. Furthermore, I will also be developing my capstone project plans further and preparing a formal project proposal to carry me through the end of the program. More details will be added as this quarter begins and progresses.</p>
+									<section id="labcontent">
+										<div class="headerbar">
+											<input type="checkbox" id="lightordark">
+											<label for="lightordark" class="modeselect">Light Like the Sun, Dark Like My Soul</label>
+											<!-- Temporary break in lightmode/dark mode elements.-->
+											<h2>Hitchhiker's Guide to Choosing Darkmode</h2>
+											<button type="button" onclick="window.location.href='falllab1index.html';"> Home </button>
+											<button type="button" class="disabled" onclick="window.location.href='falllab1eyestrain.html';" disabled> Eye Strain </button>
+											<button type="button" onclick="window.location.href='falllab1circadian.html';"> Circadian Rhythm </button>
+											<!-- Resume necessary lightmode/darkmode elements--->
+											<div class="pagecontent">
+												<!-- End of the necessary HTML components of this lightmode/darkmode implementation. -->
+												<h3>Eye Strain: What is it, and why do you want to avoid it?</h3>
+												<p>Computer overuse can be a major cause for eye strain - that nasty sensation when your eyes are badly overworked and they start to hurt and lose focus. While the brightness of your screen certainly isn't the only reason for this, it's quite notable among them. As <a href="https://www.medicinenet.com/eye_strain/article.htm">Medicinenet</a> notes, one of the causes of the sensation is the very act of viewing something too bright, which can give partial context as to why they also note looking at screens as a major cause of the unpleasant annoyance. Of course, you should make sure to blink enough, but your screen itself has some blame in this.</p>
+												<p>Every new website will generally, barring you making adjustments to your browser's display rules themselves, barrage you with a dark-on-light scheme. That's a major source of added light, which is extra work for your eyes. Hence, more eyestrain. It's a far cry from the distant past, when computers were simpler, more terminal based affairs, and dark-on-light was the default for monitor displays. When you pick darkmode, though, options permitting, you can escape from that!</p>
+												<img src="https://live.staticflickr.com/2534/4140020420_598e4d675d_b.jpg" alt="Face with screen glare on eyes, demonstrating the concept of eye strain." title="Face with screen glare on eyes, demonstrating the concept of eye strain."/>
+												<p class="license"> "40+28 Eye Strain" by bark is licensed with CC BY 2.0. To view a copy of this license, visit <a href="https://creativecommons.org/licenses/by/2.0">https://creativecommons.org/licenses/by/2.0/</a>.</p>
+												<div id="disclaimer">
+													<h3>Disclaimer</h3>
+													<p>This website does not represent the professional opinions of a medical or legal professional. These are the acquired folk knowledge of a layperson who can't look at bright screens for too long.</p>
+													<p>&copy 2021</p>
+												</div>
+											</div>
+										</div>
 									</section>
 
 							</div>

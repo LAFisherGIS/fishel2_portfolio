@@ -6,15 +6,17 @@
 -->
 <html>
 	<head>
-		<title>Winter Quarter Quarter - Liam A. Fisher's Portfolio</title>
+		<title>Main Page - The Hitchhiker's Guide to Choosing Darkmode - Liam A. Fisher's Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main.css">
+		<link rel="stylesheet" type="text/css" href="Lab Assets/Lab 1 Assets/rulesandregs.css">
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script src="Lab Assets/Lab 1 Assets/modestorage.js"></script>
 	</head>
 	<body class="subpage">
 		<div id="page-wrapper">
@@ -33,7 +35,7 @@
 									<a href="index.html">Homepage</a>
 									<a href="undergrad.html">Undergraduate Work</a>
 									<a href="fall.html">Fall Quarter</a>
-									<a href="#">Winter Quarter</a>
+									<a href="winter.html">Winter Quarter</a>
 									<a href="capstone.html">Capstone</a>
 									<a href="aboutme.html">About Me</a>
 								</nav>
@@ -50,12 +52,31 @@
 							<div class="col-12">
 
 								<!-- Main Content -->
-									<section>
-										<header>
-											<h2>Winter Quarter</h2>
-											<h3>A Look at What's to Come</h3>
-										</header>
-										<p>In the winter quarter, I will be studying the use of python in spatial analysis, and the proper practices in developing web maps for mobile devices. Furthermore, I will also be developing my capstone project plans further and preparing a formal project proposal to carry me through the end of the program. More details will be added as this quarter begins and progresses.</p>
+									<section id="labcontent">
+										<!-- The below is a component in the form of lightmode/darkmode selector integrated into this website. Thanks to Rafael Morais for the reference implementation. https://rafael.no/blog/implementing-dark-mode-without-javascript/ https://codepen.io/rafaelsnts/pen/BEzZoX-->
+										<div class="headerbar">
+											<input type="checkbox" id="lightordark">
+											<label for="lightordark" class="modeselect">Light Like the Sun, Dark Like My Soul</label>
+											<!-- Temporary break in lightmode/dark mode elements.-->
+											<h2>Hitchhiker's Guide to Choosing Darkmode</h2>
+											<button type="button" class="disabled" onclick="window.location.href='falllab1index.html';" disabled> Home </button>
+											<button type="button" onclick="window.location.href='falllab1eyestrain.html';"> Eye Strain </button>
+											<button type="button" onclick="window.location.href='falllab1circadian.html';"> Circadian Rhythm </button>
+											<!-- Resume necessary lightmode/darkmode elements--->
+											<div class="pagecontent">
+												<!-- End of the necessary HTML components of this lightmode/darkmode implementation. -->
+												<h3>Welcome to the Hitchhiker's Guide to Choosing Darkmode</h3>
+												<p>When you're looking at print media, you don't have a lot of choice as to your light level. In printing, it's quite possible to print black on white, but all but impossible to print white on black - anything that appears as such is most likely a colossal waste of ink. As such, it's only natural that when you read a book you will generally get dark text on a light background. Because computers have long leaned into the metaphor of being a digitized version of a literal desktop, meanwhile, this stylistic element is generally duplicated as the default, even though computer screens start from a black base and then emit light to reach white. Does that really make sense, though?</p>
+												<p>Simply put, no. Not in the least bit. The metaphor is increasingly irrelevant in an age where fewer and fewer people have more experience writing on paper than on a keyboard, and there are serious consequences to the light levels involved that we're realizing more and more every day. Your eyes and your brain are put through massive amounts of excess work by every white background page you look at, with impacts on both your general comfort and the quality of your sleep. The ideal webpage is like this picture of an apple. It's mostly dark, but with light spots where necessary, to protect your health. So, before you move on to the other pages to learn more about how your bright screen is hurting you, go up to the top left and click 'Light Like the Sun, Dark Like My Soul' once to drop into darkmode, the feature you probably didn't know you probably wished all websites and applications had.</p>
+												<img src="Lab Assets/Lab 1 Assets/images/tastyapple.jpg" alt="Alt Text: An apple, which looks like it might be a fiji, sitting on a board." title="An apple, which looks like it might be a fiji, sitting on a board."/>
+												<p class="license"> "apple picking 3" by ndrwfgg is licensed with CC BY 2.0. To view a copy of this license, visit <a href="https://creativecommons.org/licenses/by/2.0/" target="_null">https://creativecommons.org/licenses/by/2.0/</a>.</p>
+												<div id="disclaimer">
+													<h3>Disclaimer</h3>
+													<p>This website does not represent the professional opinions of a medical or legal professional. These are the acquired folk knowledge of a layperson who can't look at bright screens for too long.</p>
+													<p>&copy 2021</p>
+												</div>
+											</div>
+										</div>
 									</section>
 
 							</div>
