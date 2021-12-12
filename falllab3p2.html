@@ -6,15 +6,25 @@
 -->
 <html>
 	<head>
-		<title>Capstone Project - Liam A. Fisher's Portfolio</title>
+		<title>Pierce County Census Tract Level Vacancy Rates - Liam A. Fisher's Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="Lab Assets/Lab 3 Assets/3.2/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  	integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  	crossorigin=""/>
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  	integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  	crossorigin=""></script>
+		<script src= "https://cdn.jsdelivr.net/npm/leaflet-legend@1.0.2/leaflet-legend.min.js"></script>
+	  <script src="Lab Assets/Lab 3 Assets/3.2/scripts.js"></script>
+		<script src="Lab Assets/Lab 3 Assets/3.2/Data/Pierce_CT.js"></script>
 	</head>
 	<body class="subpage">
 		<div id="page-wrapper">
@@ -34,7 +44,7 @@
 									<a href="undergrad.html">Undergraduate Work</a>
 									<a href="fall.html">Fall Quarter</a>
 									<a href="winter.html">Winter Quarter</a>
-									<a href="#">Capstone</a>
+									<a href="capstone.html">Capstone</a>
 									<a href="aboutme.html">About Me</a>
 								</nav>
 
@@ -50,12 +60,65 @@
 							<div class="col-12">
 
 								<!-- Main Content -->
-									<section>
-										<header>
-											<h2>Capstone Plans</h2>
-											<h3>Environmental Racism and its Material Effects in Tacoma Washington</h3>
-										</header>
-										<p>Though the project is still in a very early stage of planning, too early to release any real materials on it, it is possible even at this early phase for me to explain in general what the purpose is. In the simplest terms, building on the endpoint of my prior project, my capstone is intended to go beyond simply looking for signs of environmental racism and seek to establish statistical correlations between the presence of pollution in an environment and two characteristics of the areas shrouded in this pollution - the academic performance of schools attended by local students, and the level of sickness present in the area. In this sense, the statistical significance or lack thereof of pollution as a structural factor in determining people's life outcomes will be evaluated, providing some real sense of the actual felt consequences of this pollution and the level of urgency with which it should be remedied.</p>
+									<section id="labcontent">
+										<div class="headerbar">
+								      <!-- The below is a component in the form of lightmode/darkmode selector integrated into this website. Thanks to Rafael Morais for the reference implementation. https://rafael.no/blog/implementing-dark-mode-without-javascript/ https://codepen.io/rafaelsnts/pen/BEzZoX-->
+										    <input type="checkbox" id="lightordark">
+										    <label for="lightordark" class="modeselect">Lightmode/Darkmode</label>
+												<h2>Pierce County Census Tract Level Vacancy Rates</h2>
+								      <!-- End of lightmode/darkmode HTML-side controls. -->
+										    <div class="pagecontent">
+													<p>This map provides for the easy estimation of how easy it would be to find a property available for rental or purchase within the various census tracts of Pierce County Washington, as well as the degree of choice one might experience in these areas. This estimation is facilitated through reference to data which report on the vacancy rates within each separate census tract.</p>
+									        <div id="map"></div>
+													<div id="legend">
+														<ul style="list-style-type:none">
+															<li>
+																<svg width="24" height="24">
+																	<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
+																	<rect width="22" height="22" stroke="black" stroke-width="1" fill="#d7191c" fill-opacity=".4"/>
+																</svg>
+																<text>0% - 2.964% Vacancy</text>
+															</li>
+															<li>
+																<svg width="24" height="24">
+																	<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
+																	<rect width="22" height="22" stroke="black" stroke-width="1" fill="#fdae61" fill-opacity=".4"/>
+																</svg>
+																<text>2.964% - 3.877% Vacancy</text>
+															</li>
+															<li>
+																<svg width="24" height="24">
+																	<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
+																	<rect width="22" height="22" stroke="purple" stroke-width="1" fill="#ffffbf" fill-opacity=".4"/>
+																</svg>
+																<text>3.877% - 4.930% Vacancy</text>
+															</li>
+															<li>
+																<svg width="24" height="24">
+																	<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
+																	<rect width="22" height="22" stroke="rebeccapurple" stroke-width="1" fill="#abd9e9" fill-opacity=".4"/>
+																</svg>
+																<text>4.930% - 6.694% Vacancy</text>
+															</li>
+															<li>
+																<svg width="24" height="24">
+																	<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
+																	<rect width="22" height="22" stroke="slateblue" stroke-width="1" fill="#2c7bb6" fill-opacity=".4"/>
+																</svg>
+																<text>6.939%+ Vacancy</text>
+															</li>
+														</ul>
+													</div>
+													<div id="Informational">
+								            <h3>About the Analysis</h3>
+								            <p>Census tract polygons were converted from a shapefile to a geojson with only 7.6% of the geometric complexity remaining using <a href="https://mapshaper.org/" target="_blank">Mapshaper</a> and wrapped up as a javascript variable prior to inclusion in the map. Based on their registered vacancy rates, these polygons have then been quantified into five contiguous groups containing equal numbers of polygons (quintiles), and colored according to their vacancy rates on a red to blue scale, with the deepest blue representing the highest amount of vacant units on the market. Data regarding the total numbers of housing units are available by scrolling over a specific census tract, and will appear in the top right corner. If you click on a census tract, you will automatically zoom in and center the map on its center, allowing for more targeted evaluation of its suitability for your needs based on the points of interested located within it.</p>
+								          </div>
+													<div id="references">
+															<h2>Data Utilized in This Map</h2>
+															<p>Census Tract Data Provided by Lab Instructor</p>
+												 </div>
+										   </div>
+										</div>
 									</section>
 
 							</div>

@@ -84,7 +84,7 @@ div.leaflet-popup-tip {
 Fixed Elements This section determines all characteristics of the page not altered by or involved in the lightmode/darkmode selection. All fixed elements of the website live here.
 */
 
-body{
+#labcontent{
   position: relative;
   height: auto;
   margin: 0em;
@@ -128,11 +128,11 @@ body{
   color: var(--textchroma);
 }
 
-h3{
+.pagecontent h3{
   font-size: 1em;
 }
 
-p{
+.pagecontent p{
   margin-left: 1em;
   margin-right: 1em;
   font-size: 0.9em;
@@ -142,25 +142,25 @@ p{
 
 
 div#references{
-  background-color: red;
+  background-color: maroon;
   color: white;
   padding: 1em;
 }
 
 
-a:link{
+.pagecontent a:link{
   color: gray;
 }
 
-a:visited{
+.pagecontent a:visited{
   color: slategray;
 }
 
-a:hover{
+.pagecontent a:hover{
   color: darkslategray;
 }
 
-a:active{
+.pagecontent a:active{
   color: black;
 }
 
@@ -168,7 +168,7 @@ a:active{
   height: 80vh;
 }
 
-img {
+.pagecontent img {
   height: 3em;
   margin-bottom: -1.5em;
 }
@@ -179,6 +179,9 @@ img {
   border-radius: 0.5em;
   padding: 1.5em;
   padding-top: 0.125em;
+  font-size: 0.9em;
+  list-style: none;
+  text-align: left;
 }
 
 li {

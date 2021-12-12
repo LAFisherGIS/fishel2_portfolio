@@ -6,15 +6,27 @@
 -->
 <html>
 	<head>
-		<title>Capstone Project - Liam A. Fisher's Portfolio</title>
+		<title>Environmental Racism in Pierce County, 2018 - Liam A. Fisher's Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="Lab Assets/Lab 5 Assets/styles.css">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+		integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+		crossorigin=""/>
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  	integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  	crossorigin=""></script>
+		<script src= "https://cdn.jsdelivr.net/npm/leaflet-legend@1.0.2/leaflet-legend.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+		<script src="Lab Assets/Lab 5 Assets/data/alldata.js"></script>
+		<script src="Lab Assets/Lab 5 Assets/MakiMarkers/Leaflet.MakiMarkers.js"></script>
+		<script src="Lab Assets/Lab 5 Assets/scripts.js"></script>
 	</head>
 	<body class="subpage">
 		<div id="page-wrapper">
@@ -34,7 +46,7 @@
 									<a href="undergrad.html">Undergraduate Work</a>
 									<a href="fall.html">Fall Quarter</a>
 									<a href="winter.html">Winter Quarter</a>
-									<a href="#">Capstone</a>
+									<a href="capstone.html">Capstone</a>
 									<a href="aboutme.html">About Me</a>
 								</nav>
 
@@ -50,12 +62,213 @@
 							<div class="col-12">
 
 								<!-- Main Content -->
-									<section>
-										<header>
-											<h2>Capstone Plans</h2>
-											<h3>Environmental Racism and its Material Effects in Tacoma Washington</h3>
-										</header>
-										<p>Though the project is still in a very early stage of planning, too early to release any real materials on it, it is possible even at this early phase for me to explain in general what the purpose is. In the simplest terms, building on the endpoint of my prior project, my capstone is intended to go beyond simply looking for signs of environmental racism and seek to establish statistical correlations between the presence of pollution in an environment and two characteristics of the areas shrouded in this pollution - the academic performance of schools attended by local students, and the level of sickness present in the area. In this sense, the statistical significance or lack thereof of pollution as a structural factor in determining people's life outcomes will be evaluated, providing some real sense of the actual felt consequences of this pollution and the level of urgency with which it should be remedied.</p>
+									<section id="labcontent">
+										<div class="headerbar">
+								      <!-- The below is a component in the form of lightmode/darkmode selector integrated into this website. Thanks to Rafael Morais for the reference implementation. https://rafael.no/blog/implementing-dark-mode-without-javascript/ https://codepen.io/rafaelsnts/pen/BEzZoX-->
+										    <input type="checkbox" id="lightordark">
+										    <label for="lightordark" class="modeselect">Lightmode/Darkmode</label>
+												<h2>Environmental Racism in Tacoma Washington - 2018</h2>
+								      <!-- End of lightmode/darkmode HTML-side controls. -->
+										    <div class="pagecontent">
+													<div class="wrapper">
+														<p><a href="https://www.weforum.org/agenda/2020/07/what-is-environmental-racism-pollution-covid-systemic/" target="_null">Environmental racism</a> is the uneven distribution of environmental risk according to demographic characteristics of the population. This is a major environmental justice concern which can be said to be present whenever a systemic skew exists in the exposure of the general populace to the pollution released into the environment. This page concerns a 2019-2020 research project using demographic data and blockgroup polygons from the American census, toxic release data from the EPA, school and park data from Pierce County, official Tacoma Public Schools Catchment Areas, and City of Tacoma road data. The purpose of this research was to estimate the level of ongoing pollution in each census block group in Tacoma in order to analyze the relationship between this and the demographic makeup of Tacoma - socioeconomic status and ethnicity as they vary across space - to identify correlations that may potentially act as signs of environmental racism. Note that where blockgroups are concerned, the maps do not stop at the exact official border of the city of Tacoma but rather extend one blockgroup beyond the border.</p>
+														<h3>Pollution and Other Statistics by Blockgroup</h3>
+														<p>The map below displays the generated 'toxic release index' produced during the project, which was generated by considering each chemical's status as a carcinogen and/or substance regulated by the Clean Air Act as listed within the EPA Toxic Release Inventory, then estimating the cumulative scores varying parts of Tacoma would have based on proximity to the toxic release sites, and combining this with estimates of automotive pollution based on the density and classifications of roads and streets within each blockgroup, then statistically classifying this into a 0-24 scale from least to most polluted.</p>
+														<p>The socioeconomic status (SES) index referenced in the popup information menu when you scroll over a blockgroup was developed based on census information on income statistics, education levels, and professions within each blockgroup. Higher SES represents a higher average level of income and education, and work industries that are commonly understood to be more stable or exclusive - such as practicing law.</p>
+									        	<div id="pbgmap"></div>
+														<p>This map provides the most general overview of those on the page. However, what might be clear is that while it can be great for determining the exact traits of a given blockgroup, the only thing it is really suitable for comparing across all of Tacoma is average pollution levels by blockgroup. When it comes to comparing other aspects, looking from blockgroup to blockgroup is too slow and demands too much memorization to be practical on a large scale. For more practical - if less precise - comparisons, the next section offers an easy to use, purely visual alternative.</p>
+														<div id="pbglegend">
+															<ul style="list-style-type:none">
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="#fef0d9" stroke-width="1" fill="#fef0d9" fill-opacity=".4"/>
+																	</svg>
+																	<text>Minimal Pollution</text>
+																</li>
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="#fdd49e" stroke-width="1" fill="#fdd49e" fill-opacity=".4"/>
+																	</svg>
+																	<text>Light Pollution</text>
+																</li>
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="#fdbb84" stroke-width="1" fill="#fdbb84" fill-opacity=".4"/>
+																	</svg>
+																	<text>Moderate Pollution</text>
+																</li>
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="#fc8d59" stroke-width="1" fill="#fc8d59" fill-opacity=".4"/>
+																	</svg>
+																	<text>Heavy Pollution</text>
+																</li>
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="#e34a33" stroke-width="1" fill="#e34a33" fill-opacity=".4"/>
+																	</svg>
+																	<text>Very Heavy Pollution</text>
+																</li>
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="#b30000" stroke-width="1" fill="#b30000" fill-opacity=".4"/>
+																	</svg>
+																	<text>Extreme Pollution</text>
+																</li>
+															</ul>
+														</div>
+														<h3>Mapped Clusters of Demographic and Pollution Data</h3>
+														<p>As you click through the 'radio buttons' of the layer selector in this map, you will see different statistical clusters of blockgroups based on given characteristics. What this means is that, for example, a blockgroup which is identified as 'high cluster' is a blockgroup with a score in the relevant trait which is significantly higher than the average and which is primarily located near other similarly extreme blockgroups, and those labeled as 'low cluster' are the opposite. A 'low outlier', meanwhile, is a blockgroup near or surrounded by a high cluster which is instead rated significantly lower in that score, and a 'high outlier' the opposite - near a low cluster, but significantly higher than the norm. These maps cannot tell you which individual blockgroup has the highest score, but they can tell you which areas are most associated with a particular trait.</p>
+														<div id="clustermap"></div>
+														<p>The following chart is not strictly based on the cluster map, but it aligns better with the city-wide analysis comparing the various clusters encourages. You may have noticed while clicking through the cluster map that the high clusters for the white population and the high-status population are close to identical for the low pollution cluster. You might have also noted that the high cluster for the black population is very close to the high cluster for pollution. The chart below follows from this sort of logic by showing calculated correlation coefficients for the relationship between every demographic characteristic of a blockgroup and its pollution. A correlation coefficient ranges from negative one to one, with a negative one meaning that in all cases, an increase in one trait is matched to a proportionate decrease in the other, a one meaning that in all cases, an increase in one trait results in a proportionate increase in the other, and a zero meaning that there is no relationship at all. Normally, correlation coefficients this close to zero would not be considered a sign of anything in particular, since they could relatively easily result from random chance. However, this may simply be a consequence of the fact that for most of the city of Tacoma, the pollution index is zero, meaning that only a very small portion of blockgroups have a readily measurable relationship between pollution and demographics. If only polluted areas were considered, or if more of Tacoma were polluted to some degree measured by the index, the coefficients would probably be much stronger.</p>
+														<p>Even so, we can see that all demographic groups are not equally exposed to pollution within their blockgroups. In particular, whiter and higher status blockgroups are somewhat unlikely to have higher pollution, whereas higher Native American population proportions are correlated with more polluted blockgroups, since the largest concentration of Native Americans in the Tacoma area is on the Puyallup reservation, which is closely tied to the port and its surrounded area - which, if you were to look at the first map again, is one of the more polluted general regions of the city. Large parts of the city have no significant native population at all. Based on the cluster map and chart, it certainly seems likely that we could call the distribution of pollution across living area environmentally racist, if not to the greatest possible degree.</p>
+														<canvas id="clusterChart" width="1600" height="900"></canvas>
+														<div id="clusterlegend">
+															<ul style="list-style-type:none">
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="#f1eef6" stroke-width="1" fill="#f1eef6" fill-opacity=".4"/>
+																	</svg>
+																	<text>Low Cluster</text>
+																</li>
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="#bdc9e1" stroke-width="1" fill="#bdc9e1" fill-opacity=".4"/>
+																	</svg>
+																	<text>Low Outlier</text>
+																</li>
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="#74a9cf" stroke-width="1" fill="#74a9cf" fill-opacity=".4"/>
+																	</svg>
+																	<text>No Significant Pattern</text>
+																</li>
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="#2b8cbe" stroke-width="1" fill="#2b8cbe" fill-opacity=".4"/>
+																	</svg>
+																	<text>High Outlier</text>
+																</li>
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="#045a8d" stroke-width="1" fill="#045a8d" fill-opacity=".4"/>
+																	</svg>
+																	<text>High Cluster</text>
+																</li>
+															</ul>
+														</div>
+														<h3>Pollution and Demographics in Context of Elementary and Middle Schools</h3>
+														<p>Exposure to pollution isn't just about how polluted are neighborhoods are. It's also about how much pollution we're exposed to elsewhere in our lives. Of course, it was not practical to evaluate every single location where people gather to go about their days during this research project. Instead, it was decided that focusing on the non-home exposure of young children was best. As such, this map focuses on analyzing Tacoma's elementary and middle schools for environmentally racist patterns. For this purpose, the official Tacoma Public Schools Catchment Zones for Tacoma elementary and middle schools were used to identify the average demographic characteristics across the area within each school's students live. Meanwhile, the pollution index rating of the school itself was identified by identifying the blockgroup or blockgroups the school itself occupied. Use the radio buttons to swap between elementary and middle schools, and click the marker in the middle of the school polygon to get a popup that lists the demographic details of the school itself.</p>
+														<div id="schoolmap"></div>
+														<p>One heartening takeaway from this map is that very few of the schools in Tacoma, whether elementary or not, are substantially polluted by the standards of this analysis. What is much less heartening is that the school part of the analysis identified some of the strongest correlations out of the entire project. While we could say that there was a decent likelihood of environmental racism with the blockgroups, and we can likely say about the same thing about the elementary schools, the probability of environmentally racist school siting is vastly higher for middle schools, where for two of three middle schools with catchment areas more than 10% black are also the only ones with any level of pollution. A 0.5 correlation coefficient would be considered relatively strong even in a study where most of the study area wasn't entirely without one of the characteristics at hand.</p>
+														<canvas id="esChart" width="1600" height="900"></canvas>
+														<canvas id="msChart" width="1600" height="900"></canvas>
+														<div id="schoollegend">
+															<ul style="list-style-type:none">
+																<li>
+																	<img src="Markers\pin-s-school+ffffb2@2x.png" alt:"Pin type icon of a book and ruler, representing a school. Colored light cream to represent minimal nearby pollution releases."/>
+																	<text>Minimally Polluted School</text>
+																</li>
+																<li>
+																	<img src="Markers\pin-s-school+fed976@2x.png" alt:"Pin type icon of a book and ruler, representing a school. Colored dark cream to represent light nearby pollution releases."/>
+																	<text>Lightly Polluted School</text>
+																</li>
+																<li>
+																	<img src="Markers\pin-s-school+feb24c@2x.png" alt:"Pin type icon of a book and ruler, representing a school. Colored light orange to represent moderate nearby pollution releases."/>
+																	<text>Moderately Polluted School</text>
+																</li>
+																<li>
+																	<img src="Markers\pin-s-school+fd8d3c@2x.png" alt:"Pin type icon of a book and ruler, representing a school. Colored orange to represent heavy nearby pollution releases."/>
+																	<text>Heavily Polluted School</text>
+																</li>
+																<li>
+																	<img src="Markers\pin-s-school+f03b20@2x.png" alt:"Pin type icon of a book and ruler, representing a school. Colored dark orange to represent very heavy nearby pollution releases."/>
+																	<text>Very Heavily Polluted School</text>
+																</li>
+																<li>
+																	<img src="Markers\pin-s-school+bd0026@2x.png" alt:"Pin type icon of a book and ruler, representing a school. Colored red to represent extreme nearby pollution releases."/>
+																	<text>Extremely Polluted School</text>
+																</li>
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="#2b8cbe" stroke-width="1" fill="#2b8cbe" fill-opacity=".4"/>
+																	</svg>
+																	<text>School Grounds</text>
+																</li>
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="#808000" stroke-width="1" fill="#808000" fill-opacity=".4"/>
+																	</svg>
+																	<text>School Cachement Zone</text>
+																</li>
+															</ul>
+														</div>
+														<h3>Pollution and Demographics in Context of Parks</h3>
+														<p>Another likely destination for kids - and also for other people - is the local park, inasmuch as one exists. On this map, you can see the actual shapes of parks, their entrances (manually digitized from satellite imagery at the time of the project), and the areas those parks serve. The service area of each park has been calculated based on the idea that a typical walking speed is around three miles per hour, and people will generally only walk for five to ten minutes, along sidewalks, to get to a park, rather than driving to it. The demographics of each park have been estimated based on this area, while the pollution has been estimated based on the land it sits on.</p>
+														<div id="parkmap"></div>
+														<p>With parks, we're back to less extreme results in terms of actual coefficients - some groups are certainly much more likely than others to be exposed to pollution, based on these estimates, but the level is not as extreme as it could be. However, another interesting trend can be observed in this map, especially if one were to compare it with the cluster map - note how most of the parks and park service areas are centered around the highest status, highest white population, lowest pollution area. In its own way, that could become grounds for a study on the equity or inequity of park placement. However, given that most parks are concentrated in such an unpolluted area, one might regard it as noteworthy that those with the fewest options for parks are much less likely to have options with low expected pollution levels.</p>
+														<canvas id="parkChart" width="1600" height="900"></canvas>
+														<div id="parklegend">
+															<ul style="list-style-type:none">
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="#fef0d9" stroke-width="1" fill="#fef0d9" fill-opacity=".4"/>
+																	</svg>
+																	<text>Minimally Polluted Park</text>
+																</li>
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="#fdd49e" stroke-width="1" fill="#fdd49e" fill-opacity=".4"/>
+																	</svg>
+																	<text>Lightly Polluted Park</text>
+																</li>
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="#fdbb84" stroke-width="1" fill="#fdbb84" fill-opacity=".4"/>
+																	</svg>
+																	<text>Moderately Polluted Park</text>
+																</li>
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="#fc8d59" stroke-width="1" fill="#fc8d59" fill-opacity=".4"/>
+																	</svg>
+																	<text>Heavily Polluted Park</text>
+																</li>
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="#e34a33" stroke-width="1" fill="#e34a33" fill-opacity=".4"/>
+																	</svg>
+																	<text>Very Heavily Polluted Park</text>
+																</li>
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="#b30000" stroke-width="1" fill="#b30000" fill-opacity=".4"/>
+																	</svg>
+																	<text>Extremely Polluted Park</text>
+																</li>
+																<li>
+																	<svg width="24" height="24">
+																		<circle cx="12" cy="14" r="7" stroke="green" stroke-width="3" fill="green" fill-opacity=".4"/>
+																	</svg>
+																	<text>Park Entrance</text>
+																</li>
+																<li>
+																	<svg width="24" height="24">
+																		<rect width="22" height="22" stroke="##808000" stroke-width="1" fill="#808000" fill-opacity=".4"/>
+																	</svg>
+																	<text>Park Service Area (~5-10 Minute Walk at 3mph)</text>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<div id="references">
+														<h2>Data Utilized in These Maps</h2>
+														<p>Analysis by Liam Fisher, 2019-2020, based on <a href="https://www.epa.gov/toxics-release-inventory-tri-program/tri-data-and-tools" target="_null">EPA Toxic Release Inventory</a>, <a href="https://data.census.gov/cedsci/US" target="_null"> Census </a> demographic and employment data, <a href="https://gisdata-piercecowa.opendata.arcgis.com/" target="_null">Pierce County </a> park and school data <a href="https://geohub.cityoftacoma.org/" target="_null"> City of Tacoma </a> road data, and <a href="https://www.tacomaschools.org/schools-and-learning-sites/boundaries" target="_null"> Tacoma Public Schools </a> official school catchment boundaries.</p>
+														<h2>Other Relevant Literature</h2>
+														<p>Ichiki, A., Ido, F., & Minami, T. (2008). Runoff characteristics of highway pollutants based on a long-term survey through a year. Water Science and Technology, 57(11), 1769-1776. <a href="https://doi.org/10.2166/wst.2008.268" target="_null">https://doi.org/10.2166/wst.2008.268</a>.</p>
+													</div>
+												</div>
+										</div>
 									</section>
 
 							</div>

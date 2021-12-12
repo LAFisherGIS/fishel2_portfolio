@@ -6,15 +6,26 @@
 -->
 <html>
 	<head>
-		<title>Capstone Project - Liam A. Fisher's Portfolio</title>
+		<title>Time and Place, A Geolocation Demonstration - Liam A. Fisher's Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="Lab Assets/Lab 4 Assets/styles.css">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  	integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  	crossorigin=""/>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+		integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+		crossorigin=""></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/suncalc/1.8.0/suncalc.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+		<script src="Lab Assets/Lab 4 Assets/scripts.js"></script>
 	</head>
 	<body class="subpage">
 		<div id="page-wrapper">
@@ -34,7 +45,7 @@
 									<a href="undergrad.html">Undergraduate Work</a>
 									<a href="fall.html">Fall Quarter</a>
 									<a href="winter.html">Winter Quarter</a>
-									<a href="#">Capstone</a>
+									<a href="capstone.html">Capstone</a>
 									<a href="aboutme.html">About Me</a>
 								</nav>
 
@@ -50,12 +61,18 @@
 							<div class="col-12">
 
 								<!-- Main Content -->
-									<section>
-										<header>
-											<h2>Capstone Plans</h2>
-											<h3>Environmental Racism and its Material Effects in Tacoma Washington</h3>
-										</header>
-										<p>Though the project is still in a very early stage of planning, too early to release any real materials on it, it is possible even at this early phase for me to explain in general what the purpose is. In the simplest terms, building on the endpoint of my prior project, my capstone is intended to go beyond simply looking for signs of environmental racism and seek to establish statistical correlations between the presence of pollution in an environment and two characteristics of the areas shrouded in this pollution - the academic performance of schools attended by local students, and the level of sickness present in the area. In this sense, the statistical significance or lack thereof of pollution as a structural factor in determining people's life outcomes will be evaluated, providing some real sense of the actual felt consequences of this pollution and the level of urgency with which it should be remedied.</p>
+									<section id="labcontent">
+										<div class="headerbar">
+								      <!-- The below is a component in the form of lightmode/darkmode selector integrated into this website. Thanks to Rafael Morais for the reference implementation. https://rafael.no/blog/implementing-dark-mode-without-javascript/ https://codepen.io/rafaelsnts/pen/BEzZoX-->
+										    <input type="checkbox" id="lightordark">
+										    <label for="lightordark" class="modeselect">Lightmode/Darkmode</label>
+												<h2>Time and Place - A Geolocation Demonstration</h2>
+								      <!-- End of lightmode/darkmode HTML-side controls. -->
+										    <div class="pagecontent">
+													<p>If you press the white button on the left with a black dot in it, this map will request permission to geolocate the device you are accessing it from. This information will be used to zoom in on that estimated location, to provide an estimate of the level of accuracy regarding that estimate (a red circle), and to determine whether or not the sun is currently in the sky there to determine if a bright or dark map is better (if you disagree with it, you can use the control in the top right to manually reselect the color of the map). Please press the button only once, unless you move a substantial distance between clicks. This information will not be stored nor delivered to any outside party.</p>
+								        	<div id="map"></div>
+										    </div>
+										</div>
 									</section>
 
 							</div>

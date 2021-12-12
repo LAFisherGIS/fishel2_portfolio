@@ -27,8 +27,9 @@ function mapping(){
 			attribution: 'School Icons &copy by <a href="https://www.mapbox.com/" target="_blank">Mapbox</a>, Map tiles by <a href="http://stamen.com" target="_blank">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0" target="_blank">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors',
 		}).addTo(mymap);
 
-  $.getJSON("Data/Neighborhood_Council_Districts_(Tacoma).geojson",function(data){
+  $.getJSON("Lab Assets/Lab 2 Assets/Data/Neighborhood_Council_Districts_(Tacoma).geojson",function(data){
      L.geoJson(data, {
+       interactive: false,
        style: function(district){
          if (district.properties.NAME === "NEW TACOMA") return {color:'purple'}
          else if (district.properties.NAME === "SOUTH TACOMA") return {color:'rebeccapurple'}
@@ -43,8 +44,9 @@ function mapping(){
        }).addTo(mymap);
   });
 
-  $.getJSON("Data/School_Grounds.geojson",function(data){
+  $.getJSON("Lab Assets/Lab 2 Assets/Data/School_Grounds.geojson",function(data){
      L.geoJson(data, {
+       interactive: false,
        style: function(grounds){
          if (grounds.properties.CITY === "TACOMA") return {opacity:1, color:'black'}
          else return {opacity:0}
@@ -52,8 +54,9 @@ function mapping(){
        }).addTo(mymap);
   });
 
-  $.getJSON("Data/Contaminated_Sites_(Ecology).geojson",function(data){
+  $.getJSON("Lab Assets/Lab 2 Assets/Data/Contaminated_Sites_(Ecology).geojson",function(data){
      L.geoJson(data, {
+       interactive: false,
        pointToLayer: function(feature, latlng){
         var riskColor,
         risk = feature.properties.SiteRank;
@@ -80,7 +83,7 @@ function mapping(){
     size: "s"
   });
 
-  $.getJSON("Data/Schools.geojson",function(data){
+  $.getJSON("Lab Assets/Lab 2 Assets/Data/Schools.geojson",function(data){
      L.geoJson(data, {
        pointToLayer: function(feature, latlng){
          var marker = L.marker(latlng, {icon: schoolIcon});

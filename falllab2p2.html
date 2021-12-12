@@ -6,15 +6,21 @@
 -->
 <html>
 	<head>
-		<title>Capstone Project - Liam A. Fisher's Portfolio</title>
+		<title>Polluters, Pedagogy, and Place - Liam A. Fisher's Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="Lab Assets/Lab 2 Assets/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="crossorigin=""/>
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-legend@1.0.2/leaflet-legend.min.js"></script>
+		<script src="Lab Assets/Lab 2 Assets/MakiMarkers/Leaflet.MakiMarkers.js"></script>
+		<script src="Lab Assets/Lab 2 Assets/scripts.js"></script>
 	</head>
 	<body class="subpage">
 		<div id="page-wrapper">
@@ -34,7 +40,7 @@
 									<a href="undergrad.html">Undergraduate Work</a>
 									<a href="fall.html">Fall Quarter</a>
 									<a href="winter.html">Winter Quarter</a>
-									<a href="#">Capstone</a>
+									<a href="capstone.html">Capstone</a>
 									<a href="aboutme.html">About Me</a>
 								</nav>
 
@@ -50,12 +56,108 @@
 							<div class="col-12">
 
 								<!-- Main Content -->
-									<section>
-										<header>
-											<h2>Capstone Plans</h2>
-											<h3>Environmental Racism and its Material Effects in Tacoma Washington</h3>
-										</header>
-										<p>Though the project is still in a very early stage of planning, too early to release any real materials on it, it is possible even at this early phase for me to explain in general what the purpose is. In the simplest terms, building on the endpoint of my prior project, my capstone is intended to go beyond simply looking for signs of environmental racism and seek to establish statistical correlations between the presence of pollution in an environment and two characteristics of the areas shrouded in this pollution - the academic performance of schools attended by local students, and the level of sickness present in the area. In this sense, the statistical significance or lack thereof of pollution as a structural factor in determining people's life outcomes will be evaluated, providing some real sense of the actual felt consequences of this pollution and the level of urgency with which it should be remedied.</p>
+									<section id="labcontent">
+
+									    <div class="headerbar">
+									      <!-- The below is a component in the form of lightmode/darkmode selector integrated into this website. Thanks to Rafael Morais for the reference implementation. https://rafael.no/blog/implementing-dark-mode-without-javascript/ https://codepen.io/rafaelsnts/pen/BEzZoX-->
+											    <input type="checkbox" id="lightordark">
+											    <label for="lightordark" class="modeselect">Lightmode/Darkmode</label>
+									      <!-- End of lightmode/darkmode HTML-side controls. -->
+									        <h2>Polluters, Pedagogy, and Place in Tacoma Washington</h2>
+											    <div class="pagecontent">
+									          <p>From the ASARCO smelter of Ruston to the industries of the port, the Tacoma area is far from free of toxic traces of its past and present. These toxins, frequently lingering underground, are not all a constant and active danger - indeed, some are in the process of being cleaned up even now - but the risk does exist in every case that under the right weather or disaster conditions people in the area could become exposed to these hidden hazards. As such, it is important to keep in mind the areas in which these toxins exist, for the sake of identifying the different risks faced by people in different parts of the city. For the purposes of risk evaluation and comparison, the schools and city council districts of Tacoma have been plotted to contextualize the threat these contaminated sites pose.</p>
+									          <div id="map"></div>
+									          <div id="Informational">
+									            <h3>About the Analysis</h3>
+									            <p>For the purposes of identifying the risk faced by particular areas of the city and the schools within, a 200 meter buffer has been calculated from the location of each contaminated site, representing a perhaps conservative estimate of the area in which someone out on normal day to day business might pass close enough to the site to be exposed to toxins in the event that the toxins are released into the streets. Where it overlaps with the grounds of a school, the students, faculty, staff, and if applicable PTA are considered to be at risk. Schools outside of the council districts of Tacoma have been included only when they are stated internally in the data in use to be part of Tacoma. In recognition of the fact that regulars of facilities other than schools are in no less risk than those present in schools, the city council districts of Tacoma have likewise been classified on the basis of the portion of their landmass which falls within these areas. Contaminated sites have been included regardless of their locations within Pierce County, so long as the level of risk they present has been evaluated and listed in the data, because even a toxic site outside of Tacoma proper can still threaten Tacomans. For more precise information on whether you are potentially at risk, zoom in to check by street names if you spend a large portion of your time in a contaminated site's risk zone. The points representing schools are clickable and will yield information on the name, street address, and type (IE, elementary, middle, high, private, technical, university) of the school in question.</p>
+									          </div>
+									          <div id="legend">
+									            <ul></ul>
+															<li>
+																<img src="Lab Assets/Lab 2 Assets/MapboxIcons\pin-s-school+006400@2x.png" alt:"Pin type icon of a book and ruler, representing a school."/>
+																<text>Tacoma Area School</text>
+															</li>
+															<li>
+																<svg width="24" height="24">
+																	<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
+																	<rect width="22" height="22" stroke="black" stroke-width="1" fill="gray" fill-opacity=".4"/>
+																</svg>
+																<text>Tacoma Area School Grounds</text>
+															</li>
+									            <li>
+																<svg width="24" height="24">
+																	<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
+																	<rect width="22" height="22" stroke="purple" stroke-width="1" fill="purple" fill-opacity=".4"/>
+																</svg>
+																<text>Area of Greatest Risk - New Tacoma</text>
+									            </li>
+															<li>
+																<svg width="24" height="24">
+																	<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
+																	<rect width="22" height="22" stroke="rebeccapurple" stroke-width="1" fill="rebeccapurple" fill-opacity=".4"/>
+																</svg>
+																<text>Areas of Major Risk - South Tacoma, Northeast Tacoma, South End</text>
+															</li>
+															<li>
+																<svg width="24" height="24">
+																	<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
+																	<rect width="22" height="22" stroke="slateblue" stroke-width="1" fill="slateblue" fill-opacity=".4"/>
+																</svg>
+																<text>Areas of Minor Risk - Eastside, Central, North End</text>
+															</li>
+									            <li>
+																<svg width="24" height="24">
+																	<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
+																	<rect width="22" height="22" stroke="plum" stroke-width="1" fill="plum" fill-opacity=".4"/>
+																</svg>
+																<text>Area of Least Risk - West End</text>
+									            </li>
+									            <li>
+																<svg width="24" height="24">
+																	<circle cx="12" cy="14" r="7" stroke="maroon" stroke-width="3" fill="maroon" fill-opacity=".4"/>
+																</svg>
+																<text>200 Meter Radius Around Highest Risk Site</text>
+									            </li>
+									            <li>
+																<svg width="24" height="24">
+																	<circle cx="12" cy="14" r="7" stroke="red" stroke-width="3" fill="red" fill-opacity=".4"/>
+																</svg>
+																<text>200 Meter Radius Around High Risk Site</text>
+									            </li>
+									            <li>
+																<svg width="24" height="24">
+																	<circle cx="12" cy="14" r="7" stroke="orangered" stroke-width="3" fill="orangered" fill-opacity=".4"/>
+																</svg>
+																<text>200 Meter Radius Around Moderate-High Risk Site</text>
+									            </li>
+															<li>
+																<svg width="24" height="24">
+																	<circle cx="12" cy="14" r="7" stroke="orange" stroke-width="3" fill="orange" fill-opacity=".4"/>
+																</svg>
+																<text>200 Meter Radius Around Moderate Risk Site</text>
+															</li>
+															<li>
+																<svg width="24" height="24">
+																	<circle cx="12" cy="14" r="7" stroke="goldenrod" stroke-width="3" fill="goldenrod" fill-opacity=".4"/>
+																</svg>
+																<text>200 Meter Radius Around Low-Moderate Risk Site</text>
+															</li>
+															<li>
+																<svg width="24" height="24">
+																	<circle cx="12" cy="14" r="7" stroke="yellow" stroke-width="3" fill="yellow" fill-opacity=".4"/>
+																</svg>
+																<text>200 Meter Radius Around Low Risk Site</text>
+															</li>
+									          </div>
+									          <div id="references">
+									            <h2>Data Utilized in This Map</h2>
+									            <p><a href="https://gisdata-piercecowa.opendata.arcgis.com/datasets/schools/explore" target="_blank">School Points</a> courtesy of an anonymous user of Pierce County WA Open Geospatial Data Portal</p>
+															<p><a href="https://gisdata-piercecowa.opendata.arcgis.com/datasets/school-grounds/explore" target="_blank">School Ground Polygons</a> courtesy of an anonymous user of Pierce County WA Open Geospatial Data Portal</p>
+															<p><a href="https://geohub.cityoftacoma.org/datasets/neighborhood-council-districts-tacoma/explore?location=47.243852%2C-122.455044%2C12.43" target="_blank">Neighborhood Council Polygons</a> courtesy of an anonymous user of City of Tacoma GIS</p>
+															<p><a href="https://geohub.cityoftacoma.org/datasets/contaminated-sites-ecology/explore?location=47.242905%2C-122.455500%2C12.00" target="_blank">Contaminated Sites (Ecology) Points</a> courtesy of an anonymous user of City of Tacoma GIS</p>
+									          </div>
+											    </div>
+											</div>
 									</section>
 
 							</div>
