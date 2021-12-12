@@ -80,6 +80,7 @@ section.leaflet-control-layers-list {
   color: var(--textchroma);
   margin: -1em;
   padding: 1em;
+  text-align: left;
 }
 
 
@@ -151,7 +152,7 @@ Fixed Elements This section determines all characteristics of the page not alter
 }
 
 div#references{
-  background-color: maroon;
+  background-color: #2C2F33;
   color: white;
   padding: 1em;
 }
@@ -217,4 +218,11 @@ canvas {
   margin-bottom: 3em;
   background: papayawhip;
   color: black;
+}
+
+input.leaflet-control-layers-selector {
+  -moz-appearance: radio;
+  -webkit-appearance: radio;
+  -ms-appearance: radio;
+  appearance: radio;
 }

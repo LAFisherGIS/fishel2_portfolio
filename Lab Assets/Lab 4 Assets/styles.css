@@ -80,6 +80,7 @@ section.leaflet-control-layers-list {
   color: var(--textchroma);
   margin: -1em;
   padding: 1em;
+  text-align: left;
 }
 
 /*
