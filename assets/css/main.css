@@ -1395,6 +1395,20 @@ input, select, textarea {
 			border-bottom: 0 !important;
 		}
 
+		.text-list li {
+			padding: 0.05em 0 0.05em 0;
+		}
+
+			.text-list li:first-child {
+				padding-top: 0 !important;
+				border-top: 0 !important;
+			}
+
+			.text-list li:last-child {
+				padding-bottom: 0 !important;
+				border-bottom: 0 !important;
+			}
+
 	.quote-list li {
 		padding: 1em 0 1em 0;
 		overflow: hidden;
@@ -1646,6 +1660,10 @@ input, select, textarea {
 		}
 
 		.content .link-list li {
+			border-bottom: solid 1px #fff;
+		}
+
+		.content .text-list li {
 			border-bottom: solid 1px #fff;
 		}
 
@@ -1970,6 +1988,10 @@ input, select, textarea {
 
 			.link-list li {
 				padding: 0.75em 0 0.75em 0;
+			}
+
+			.text-list li {
+				padding: 0.20em 0 0.20em 0;
 			}
 
 			.quote-list li p {
