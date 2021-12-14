@@ -149,19 +149,19 @@ Fixed Elements This section determines all characteristics of the page not alter
 }
 
 .pagecontent a:link{
-  color: gray;
+  color: #FF4500;
 }
 
 .pagecontent a:visited{
-  color: slategray;
+  color: chocolate;
 }
 
 .pagecontent a:hover{
-  color: darkslategray;
+  color: #FF0000;
 }
 
 .pagecontent a:active{
-  color: black;
+  color: #8B0000;
 }
 
 #map {
