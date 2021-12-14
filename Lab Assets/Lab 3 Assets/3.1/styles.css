@@ -131,7 +131,6 @@ Fixed Elements This section determines all characteristics of the page not alter
 
 .pagecontent{
   padding-top: 0.5em;
-  text-align: center;
 }
 
 /* This variable color must, necessarily, be located outside of the appropriate section to preserve its color*/
