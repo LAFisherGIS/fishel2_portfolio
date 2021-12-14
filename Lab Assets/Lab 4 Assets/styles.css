@@ -140,7 +140,7 @@ Fixed Elements This section determines all characteristics of the page not alter
   font-size: 1em;
 }
 
-.pagecontentp{
+.pagecontent p{
   margin-left: 1em;
   margin-right: 1em;
   font-size: 0.9em;
