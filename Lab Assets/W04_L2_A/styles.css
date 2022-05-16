@@ -1,0 +1,79 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+h2 {
+  font: 2em 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+h3 {
+  font: 2.4em 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+p {
+  font: 1em 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.mapboxgl-popup-content {
+  color: black;
+}
+
+#map{
+  width: auto;
+  height: 98vh
+}
+
+a:link{
+  color: lightblue;
+}
+
+a:visited{
+  color: blue;
+}
+
+a:hover{
+  color: purple;
+}
+
+a:active{
+  color: darkblue;
+}
+
+@media screen and (max-width: 600px) {
+  h2 {
+    font: 1em/2em 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+
+  h3 {
+    font: 0.8em/1.6em 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+
+  p {
+    font: 0.6em/1.2em 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  h2 {
+    font: 1em/2em 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+
+  h3 {
+    font: 0.8em/1.6em 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
+  }
+
+  p {
+    font: 0.6em/1.2em 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+}

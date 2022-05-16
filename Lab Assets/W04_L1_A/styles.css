@@ -1,0 +1,71 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+h2 {
+  font: 36px/60px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+h3 {
+  font: 24px/40px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+p {
+  font: 18px/30px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+#map {
+  width: auto;
+  height: 98vh;
+}
+
+#legend {
+background-color: white;
+color: black;
+border-radius: 3px;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+padding: 10px;
+position: absolute;
+right: 30px;
+bottom: -140px;
+z-index: 1;
+}
+
+#legend h4 {
+margin: 0 0 10px;
+}
+
+#legend hr {
+  width: 16px;
+  transform: rotate(45deg);
+  float: left;
+  margin-right: 10px
+}
+
+#legend ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.class1 {
+  border-top: 3px solid red;
+}
+.class2 {
+  border-top: 3px solid orange
+}
+
+.class3{
+  border-top: 3px solid yellow
+}
+
+.boundary{
+  border-top: 4px solid black;
+  opacity: .6
+}
+
+.mapboxgl-popup-content {
+  color: black;
+}
