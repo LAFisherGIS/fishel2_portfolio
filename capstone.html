@@ -11,6 +11,7 @@
 		-->
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="capstone.css" />
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>
 		<script src="assets/js/breakpoints.min.js"></script>
@@ -54,12 +55,211 @@
 								<!-- Main Content -->
 									<section>
 										<header>
-											<h2>Capstone Plans</h2>
-											<h3>Environmental Racism and its Material Effects in Tacoma Washington</h3>
+											<h2>Capstone Progress</h2>
+											<h3>Environmental Racism and its Material Effects on Education in Tacoma Washington - Preliminary Outputs</h3>
 										</header>
-										<p>Currently, preparations are being made to generate an air pollution land use regression for Tacoma based on collected air pollution samples from spring 2022 and a variety of data factors. This LUR will be used to fuel a geographically weighted regression investigating the variation in correlation between air pollution and educational performance in elementary and middle schools, to refine an understanding of the mediating role of socioeconomic status on a scientifically attested correlation between toxins and reduced performance. From there, tools will be developed which can investigate contexts ranging from all schools of a type in Tacoma to all ethic communities within a given school to a given ethnic community at all schools to identify the degree to which air pollution, once socioeconomic status is accounted for, explains variation in academic outcomes.</p>
+										<p>Although not yet complete, considerable progress has been made in the planned investigation of the potential for a link between disparities in air pollution exposure in Tacoma and disparities in achieved standardized test scores across space. A model describing the predicted air pollution density in various parts of the city has been constructed based on gathered air pollution readings (though the sample of  places and times is by no means robust enough to stand serious interrogation) and publicly available data using XLUR, and based on this model regressions both geographically weighted and not have been applied to investigate the potential for explanatory power.
+
+										Initial results are interesting but seem 'too good to be true' - there is a need to investigate further and refine the methodology to identify just how accurate they could be or not be. Pursuant to this, a preliminary release has been prepared to gather feedback.</p>
 									</section>
 
+							</div>
+								<div class="col-3 col-6-medium col-12-small">
+										<section>
+											<a class="bordered-feature-image"><img src="images/original_model.png" alt="The original air pollution model produced" /> </a>
+											<h2>Initial Pollution Model - Block Groups</h2>
+											<p>Although this model provides results that were probably much more accurate over the port of Tacoma, predicted values were far too distinct from measured values in many more populated areas, and a sizable number of the points used to generate it were from an area of active road work which could not be assumed to be representative of normal conditions in the area.</p>
+										</section>
+								</div>
+								<div class="col-3 col-6-medium col-12-small">
+										<section>
+											<a class="bordered-feature-image"><img src="images/new_model.png" alt="Revised air pollution model. Considered provisionally more accurate in areas other than the port of Tacoma" /> </a>
+											<h2>Modified Pollution Model - Block Groups</h2>
+											<p>By dropping the points found near the University of the Puget Sound campus, which were largely tied up in active road work, it is believed that pollution results shown have been made more accurate. However, notable issues with the collection method remain, some areas seem to host possible underestimates, and the most northeastern parts of Tacoma were never tested at all.</p>
+										</section>
+								</div>
+							<div class="col-12">
+									<section>
+										<header>
+											<h3>Tacoma Public School Grades</h3>
+										</header>
+										<p>The grades under analysis are 2014 and 2015 Adequate Yearly Progress metrics for Tacoma Public Schools elementary and middle schools, attached to school catchment area polygons provided by Dr. Matthew Kelley of the University of Washington Tacoma campus. These grades for reading and math run from -100, the worst standardized testing performance, to 0, representing the best standardized testing performance. Note for future reference that most high grades are found in areas of comparatively lower pollution, as well as that there are fewer middle school regions, and in these regions pollution and educational outcomes may seem less connected than with elementary schools.</p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+											<a class="bordered-feature-image"><img src="images/e_14_read.png" alt="2014 AWP reading grades by elem school catchment area" /></a>
+										<h2>2014 Elementary School Reading</h2>
+										<p></p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+											<a class="bordered-feature-image"><img src="images/e_14_math.png" alt="2014 AWP math grades by elem school catchment area" /> </a>
+										<h2>2014 Elementary School Mathematics</h2>
+										<p></p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+											<a class="bordered-feature-image"><img src="images/e_15_read.png" alt="2015 AWP reading grades by elem school catchment area" /> </a>
+										<h2>2015 Elementary School Reading</h2>
+										<p></p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+											<a class="bordered-feature-image"><img src="images/e_15_math.png" alt="2015 AWP math grades by elem school catchment area" /> </a>
+										<h2>2015 Elementary School Mathematics</h2>
+										<p></p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+											<a class="bordered-feature-image"><img src="images/m_14_read.png" alt="2014 AWP middle school reading grades" /> </a>
+										<h2>2014 Middle School Reading</h2>
+										<p></p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+											<a class="bordered-feature-image"><img src="images/m_14_math.png" alt="2014 AWP middle school math grades" /> </a>
+										<h2>2014 Middle School Math</h2>
+										<p></p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+											<a class="bordered-feature-image"><img src="images/m_15_read.png" alt="2015 AWP middle school reading grades" /> </a>
+										<h2>2015 Middle School Reading</h2>
+										<p></p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+											<a class="bordered-feature-image"><img src="images/m_15_math.png" alt="2014 AWP middle school math grades" /> </a>
+										<h2>2015 Middle School Math</h2>
+										<p></p>
+									</section>
+							</div>
+							<div class="col-12">
+									<section>
+										<header>
+											<h3>Correlations</h3>
+										</header>
+										<p>As noted prior, two types of statistical regression have been used to interrogate the possible relationship between air pollution predictions and observed educational outcomes - a bisquare geographically weighted regression and a 'global' least squares base spatial regression. The former of these has the benefit of allowing variations in the apparent importance of the variables in question to be investigated visually, while the latter is more suited to actual investigation of the apparent strength of the effect. Though other variables have been tried, at the present time the only two represented in the regressions are predicted pollution and the average median income of the block groups of residence of each predicted student (children in roughly the correct age range, as attested by American Community Survey data), as including too many variables was found to exaggerate the apparent impact of pollution and mask the significance of income, along with creating other considerable problems.
+										</p>
+										<p>Below, the GWR R^2 value (percentage of variation explained by the variables at hand, written as a decimal rather than percentage) maps for each level-year-topic combination will be displayed in combination with relevant details from the OLS regressions - the intercepts (predicted base values), the coefficients and p-values for pollution and median income (in US dollars), and the adjusted r^2 (percent of variation explained) of each 'global' regression.
+										</p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+											<a class="bordered-feature-image"><img src="images/elem_r14_over.png" alt="GWR R^2 values for 2014 elementary school reading, as explained by pollution and income" /> </a>
+										<h2>2014 Elementary School Reading GWR</h2>
+										<p>Intercept: -31.3030055<br>
+										Pollution Coefficient: -0.2007311 (Accounts for a potential ~16 points out of 100 possible)<br>
+										Pollution P-Value: 0.0064061 (0.64 percent likely to be random chance)<br>
+										Income Coefficient: 0.0003799<br>
+										Income P-Value: 0.0000027<br>
+										Model R^2: 0.5972 (0.2147 if only pollution is included)</p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+											<a class="bordered-feature-image"><img src="images/elem_m14_over.png" alt="GWR R^2 values for 2014 elementary school math, as explained by pollution and income" /> </a>
+										<h2>2014 Elementary School Math GWR</h2>
+										<p>Intercept: -34.8937007<br>
+										Pollution Coefficient: -0.3403392 (Accounts for a potential ~24 points out of 100 possible)<br>
+										Pollution P-Value: 0.0528466<br>
+										Income Coefficient: 0.0004217<br>
+										Income P-Value: 0.0004030<br>
+										Model R^2: 0.4564 (0.2159 if only pollution is included)</p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+											<a class="bordered-feature-image"><img src="images/elem_r15_over.png" alt="GWR R^2 values for 2015 elementary school reading, as explained by pollution and income" /> </a>
+										<h2>2015 Elementary School Reading GWR</h2>
+										<p>Intercept: -62.9583035<br>
+										Pollution Coefficient: -0.1849544<br>
+										Pollution P-Value: 0.2655922<br>
+										Income Coefficient: 0.0005916<br>
+										Income P-Value: 0.0000081<br>
+										Model R^2: 0.5461 (0.1721 if only pollution is included)</p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+											<a class="bordered-feature-image"><img src="images/elem_m15_over.png" alt="GWR R^2 values for 2015 elementary school math, as explained by pollution and income" /> </a>
+										<h2>2015 Elementary School Math GWR</h2>
+										<p>Intercept: -69.7821786<br>
+										Pollution Coefficient: -0.1293142<br>
+										Pollution P-Value: 0.4090598<br>
+										Income Coefficient: 0.0006644<br>
+										Income P-Value: 0.0000005<br>
+										Model R^2: 0.6116 (0.1566 if only pollution is included)</p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+											<a class="bordered-feature-image"><img src="images/mid_r14_over.png" alt="GWR R^2 values for 2014 middle school reading, as explained by pollution and income" /> </a>
+										<h2>2014 Middle School Reading GWR</h2>
+										<p>Intercept: -99.1597390<br>
+										Pollution Coefficient: 0.3245305<br>
+										Pollution P-Value: 0.2491621<br>
+										Income Coefficient: 0.0009887<br>
+										Income P-Value: 0.0038938<br>
+										Model R^2: 0.7381 (0.1854 if only pollution is included)</p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+											<a class="bordered-feature-image"><img src="images/mid_m14_over.png" alt="GWR R^2 values for 2014 middle school math, as explained by pollution and income" /> </a>
+										<h2>2014 Middle School Math GWR</h2>
+										<p>Intercept: -120.9966560<br>
+										Pollution Coefficient: 0.4393632<br>
+										Pollution P-Value: 0.3661658<br>
+										Income Coefficient: 0.0010860<br>
+										Income P-Value: 0.0335398<br>
+										Model R^2: 0.4591 (0.0563 if only pollution is included)</p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+											<a class="bordered-feature-image"><img src="images/mid_r15_over.png" alt="GWR R^2 values for 2015 middle school reading, as explained by pollution and income" /> </a>
+										<h2>2015 Middle School Reading GWR</h2>
+										<p>Intercept: -103.8630418<br>
+										Pollution Coefficient: 0.2102551<br>
+										Pollution P-Value: 0.6034778<br>
+										Income Coefficient: 0.0009128<br>
+										Income P-Value: 0.0418053<br>
+										Model R^2: 0.5055 (0.0411 if only pollution is included)</p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+											<a class="bordered-feature-image"><img src="images/mid_m15_over.png" alt="GWR R^2 values for 2015 middle school math, as explained by pollution and income" /> </a>
+										<h2>2015 Middle School Math GWR</h2>
+										<p>Intercept: -112.4504292 <br>
+										Pollution Coefficient: 0.3140517<br>
+										Pollution P-Value: 0.4817371<br>
+										Income Coefficient: 0.0008302<br>
+										Income P-Value: 0.0774012<br>
+										Model R^2: 0.3198 (0.1851 if only pollution is included)</p>
+									</section>
+							</div>
+							<div class="col-12">
+									<section>
+										<header>
+											<h3>Discussion</h3>
+										</header>
+										<p>The results of these regressions have been highly mixed in a way that suggests a number of flaws in the current approach. For one, the p-values obtained from the majority of the elementary school readings for p-values are far, far lower than could ever reasonably be expected from the methods used. A very basic pollution model prepared in 2022 from an extremely limited pool of observations was used in combination with 2016-2017 school catchment areas to investigate possible causes for educational outcomes measured in 2014-2015. It makes very little sense to get any p-value below 0.1 through these methods - the goal of this project was set on 'suggesting that a more rigorous analysis may be necessary' from the beginning for a reason. Furthermore, the inconsistency across topics, years, and grade levels suggests that some other phenomena which, in many cases, varies alongside the estimated pollution, might be be having its own correlation with grade results falsely included in that of pollution. Whatever actual correlation the estimated pollution might have with grades, it is unlikely to be as strong or certain as the most extreme outcomes shown at the elementary school level. One possible example of such a missing variable would be the portion of the population living below the poverty line.</p>
+										<p>Also worth considering is the fact that, in all cases in middle schools, pollution was rated as fairly unlikely to truly have the supposed correlation to grades - and said correlation was a positive correlation. This may be further evidence of flaws in the methodology thus far, though it may also simply be a matter of middle schools covering larger areas and having a narrower range of grades than elementary schools, combined with a different range of pollution values due to the differing block groups included. The smaller number of middle schools could, in its own right, adversely effect the statistical analysis, as well.</p>
+										<p>It is also very possible that any relationship that could exist is too complex to be described through a linear equation, and a more nuanced statistical regression which can assess 'critical masses' or breakpoints in the data to see if there are varying levels of apparent effect at varying levels of exposure might be needed. All of these factors must be considered as the project continues, for best results.</p>
+										<p>Originally, individual demographic categories of students were also investigated using a combination of census data and published metrics in the educational outcome data analyzed, and the data relating to these analyses have been retained, but it was found from the results that the methods used to estimate the average conditions of students of specific ethnic groups based on the American Community Survey data does not produce  results which would be considered statistically significant. This is likely due to the facts that blockgroups are comparatively large, heterogeneous units, that the number of children of a given ethnic group was simply being estimated, and the fact that ascribing the mean or median condition across a whole block group to members of a particular subset of it is a logical and statistical fallacy, meaning that the data being used in an attempt to explain educational outcomes were not accurate to the student populations in question in the first place. Additionally, not all schools had data for all student ethnicities, but this may not have been adequately addressed in the code written.
+										</p>
+									</section>
 							</div>
 						</div>
 					</div>
