@@ -42,11 +42,6 @@ function schoolMap(){
       interactive: false
     });
 
-    let egJson = L.geoJson(elemGrounds, {
-      style: sgPaint,
-      interactive: false
-    });
-
     // Thanks to jseppi for their guide on how to use MakiMarkers https://github.com/jseppi/Leaflet.MakiMarkers/blob/master/index.html
 
     L.MakiMarkers.accessToken = "sk.eyJ1IjoibGFmaXNoZXJnaXMiLCJhIjoiY2t2OXJ4dnV1YTY2ZjJwbnpjM3BxbWRnYiJ9.CW4oaT94TkbelBF0Fj4rJw";
@@ -104,11 +99,6 @@ function schoolMap(){
         }
     });
 
-    let mgJson = L.geoJson(midGrounds, {
-      style: sgPaint,
-      interactive: false
-    });
-
     let mpJson = L.geoJson(midPoints, {
       pointToLayer: function(feature, latlng){
         let polluMarker,
@@ -125,9 +115,9 @@ function schoolMap(){
         }
     });
 
-    let elem = L.layerGroup([ebJson, egJson, epJson])
+    let elem = L.layerGroup([ebJson, epJson])
 
-    let mid = L.layerGroup([mbJson, mgJson, mpJson])
+    let mid = L.layerGroup([mbJson, mpJson])
 
     let schoolOverlay = {
       "Elementary Schools": elem,
