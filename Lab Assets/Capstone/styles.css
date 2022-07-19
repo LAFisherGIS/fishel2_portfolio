@@ -1,0 +1,102 @@
+/*
+Opening Statement -. Thanks to Rafael Morais (https://rafael.no/blog/implementing-dark-mode-without-javascript/ https://codepen.io/rafaelsnts/pen/BEzZoX) for the reference implementation for javascript-free lightmode/darkmode which this is derived in part from. Even if javascript actually is being used in the website in the end.
+*/
+
+/*
+Mode Selector Styling - This section defines the aesthetic qualities of the checkbox which toggles lightmode and darkmode - the fact that it is only visible as text, and the fact that the color of the text changes depending on the current mode.
+*/
+
+/*
+ Color Variations - This section establishes the manner in which the content of the page at large is altered when the checkbox is ticked defining the variables for the implementation as well as the conditions under which they change and what they influence.
+ */
+
+/*Thanks to parsethis, Robert Kajic, Thriggle, and MySchizoBuddy for guidance on styling popups https://stackoverflow.com/questions/12606141/how-would-i-customise-the-look-and-feel-of-the-leaflet-popup*/
+
+
+div.leaflet-popup-content-wrapper {
+  background-color: black;
+  color: white;
+}
+
+div.leaflet-popup-tip {
+  background-color: black
+}
+
+/*Thanks to juanignaciosl for guidance on styling zoom controls https://stackoverflow.com/questions/22926512/customize-zoom-in-out-button-in-leaflet-js*/
+
+.leaflet-control-container .leaflet-top .leaflet-control-zoom a.leaflet-control-zoom-in {
+  background-color: black;
+  color: white;
+}
+
+.leaflet-control-container .leaflet-top .leaflet-control-zoom a.leaflet-control-zoom-out {
+  background-color: black;
+  color: white;
+}
+
+.leaflet-control-layers-toggle {
+  background-color: black;
+}
+
+section.leaflet-control-layers-list {
+  background-color: black;
+  color: white;
+  margin: -1em;
+  padding: 1em;
+  text-align: left;
+}
+
+
+#schoollegend {
+  background: black;
+}
+
+/*
+Fixed Elements This section determines all characteristics of the page not altered by or involved in the lightmode/darkmode selection. All fixed elements of the website live here.
+*/
+
+#schoolmap {
+  position: relative;
+  height: 90vh;
+}
+
+.info {
+    padding: 2em 2em;
+    font: 1em/1.5em Arial, Helvetica, sans-serif;
+    background: var(--backgroundchroma);
+    box-shadow: 0 0 1em rgba(0,0,0,0.2);
+    border-radius: 2em;
+}
+
+.info h4 {
+    margin: 0 0 1em;
+    color: var(--textchroma);
+}
+
+#schoollegend {
+  opacity: 0.85;
+  line-height: 0em;
+  border-radius: 0.5em;
+  padding-left: 0em;
+  padding-right: 1.5em ;
+  padding-bottom: 1.5em ;
+  padding-top: 0.125em;
+  text-align: left;
+}
+
+.policon img {
+  height: 1em;
+  margin-bottom: -1.5em;
+}
+
+li {
+  padding: 0.05em
+}
+
+
+input.leaflet-control-layers-selector {
+  -moz-appearance: radio;
+  -webkit-appearance: radio;
+  -ms-appearance: radio;
+  appearance: radio;
+}

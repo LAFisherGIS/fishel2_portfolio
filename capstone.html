@@ -17,6 +17,18 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<link rel="stylesheet" type="text/css" href="Lab Assets/Capstone/styles.css">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+		integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+		crossorigin=""/>
+		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+		integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+		crossorigin=""></script>
+		<script src= "https://cdn.jsdelivr.net/npm/leaflet-legend@1.0.2/leaflet-legend.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+		<script src="Lab Assets/Capstone/alldata.js"></script>
+		<script src="Lab Assets/Lab 5 Assets/MakiMarkers/Leaflet.MakiMarkers.js"></script>
+		<script src="Lab Assets/Capstone/scripts.js"></script>
 	</head>
 	<body class="subpage">
 		<div id="page-wrapper">
@@ -158,8 +170,8 @@
 											<a class="bordered-feature-image"><img src="images/elem_r14_over.png" alt="GWR R^2 values for 2014 elementary school reading, as explained by pollution and income" /> </a>
 										<h2>2014 Elementary School Reading GWR</h2>
 										<p>Intercept: -31.3030055<br>
-										Pollution Coefficient: -0.2007311 (Accounts for a potential ~16 points out of 100 possible)<br>
-										Pollution P-Value: 0.0064061 (0.64 percent likely to be random chance)<br>
+										Pollution Coefficient: -0.2007311<br>
+										Pollution P-Value: 0.0064061<br>
 										Income Coefficient: 0.0003799<br>
 										Income P-Value: 0.0000027<br>
 										Model R^2: 0.5972 (0.2147 if only pollution is included)</p>
@@ -170,7 +182,7 @@
 											<a class="bordered-feature-image"><img src="images/elem_m14_over.png" alt="GWR R^2 values for 2014 elementary school math, as explained by pollution and income" /> </a>
 										<h2>2014 Elementary School Math GWR</h2>
 										<p>Intercept: -34.8937007<br>
-										Pollution Coefficient: -0.3403392 (Accounts for a potential ~24 points out of 100 possible)<br>
+										Pollution Coefficient: -0.3403392<br>
 										Pollution P-Value: 0.0528466<br>
 										Income Coefficient: 0.0004217<br>
 										Income P-Value: 0.0004030<br>
@@ -252,12 +264,170 @@
 							<div class="col-12">
 									<section>
 										<header>
+											<h3>Revisions</h3>
+										</header>
+										<p>After this initial analysis was carried out, an alternative method of characterizing socioeconomic status was implemented based partly on Mullen, Grineski, Collins, and Mendoza (2020)'s concept for a 'school disadvantage index' based on socioeconomic and. Data characterizing the per-school status regarding Title I supplemental funding eligibility, free and reduced lunch eligibility proportions of students, student body population, and numbers of Latinx, Native American, Pacific Islander, and Black students (the authors of the above referenced paper included Asian students with pacific islanders, and did not consider Latinx students) were downloaded from the National Center for Education Statistics for 2013-2014 and 2014-2015 and, aside from the categorical title I eligibility data, processed into five classes through Jenks Natural Breaks (the authors did not discuss the method they used to weight their index, so one had to be developed quickly for this project). These data were then used to produce three distinct model attempts - Index A, which weighted each variable equally as worth between one and five points, Index B, which weighted title I eligibility as worth five points (ineligibility counting for zero points) and free/reduced lunch statistics as worth one to five, but ethnic statistics as worth zero point six to three, and Index C, which did the opposite, rating ethnic characteristics as more important. Ethnic data are included in the analysis for the sake of approximating intergenerational wealth disparities and other systemic disadvantages, and in no way as a means to make judgements on particular cultures.
+										</p>
+										<p>Generally, the index with the strongest perfomance was A, while C generally had the weakest performance, when the p-value is considered. Though cases did exist where B was stronger than A, or where C was stronger than both, or where no difference could be discerned within the level of precision provided, A was generally strongest and also had the lowest multicollinearity condition number in most cases. As such, only Index A will be considered here. The theoretical minimum value of the index was five, with a theoretical maximum of thirty.</p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+										<h2>2014 Elementary School Reading with Disadvantage Index</h2>
+										<p>Intercept: 12.4274628<br>
+										Pollution Coefficient: -0.2001689<br>
+										Pollution P-Value: 0.0640128<br>
+										Income Coefficient: -1.2072957<br>
+										Income P-Value: 0.0000017<br>
+										Model R^2: 0.6079</p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+										<h2>2014 Elementary School Math with Disadvantage Index</h2>
+										<p>Intercept: 14.1785342<br>
+										Pollution Coefficient: -0.3288678<br>
+										Pollution P-Value: 0.0538445<br>
+										Income Coefficient: -1.3953955<br>
+										Income P-Value: 0.0001558<br>
+										Model R^2: 0.4863</p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+										<h2>2015 Elementary School Reading with Disadvantage Index</h2>
+										<p>Intercept: 4.0579227<br>
+										Pollution Coefficient: -0.1576102<br>
+										Pollution P-Value: 0.2580053<br>
+										Income Coefficient: -1.9292072<br>
+										Income P-Value: 0.0000000<br>
+										Model R^2: 0.6730</p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+										<h2>2015 Elementary School Math with Disadvantage Index</h2>
+										<p>Intercept: 2.9107348<br>
+										Pollution Coefficient: -0.1630334<br>
+										Pollution P-Value: 0.3020090<br>
+										Income Coefficient: -1.8603782<br>
+										Income P-Value: 0.0000008<br>
+										Model R^2: 0.5977</p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+										<h2>2014 Middle School Reading with Disadvantage Index</h2>
+										<p>Intercept: -4.4047915<br>
+										Pollution Coefficient: 0.2169860<br>
+										Pollution P-Value: 0.3964145<br>
+										Income Coefficient: -1.7278209<br>
+										Income P-Value: 0.0039840<br>
+										Model R^2: 0.7365</p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+										<h2>2014 Middle School Math with Disadvantage Index</h2>
+										<p>Intercept: -16.9522868<br>
+										Pollution Coefficient: 0.3442221<br>
+										Pollution P-Value: 0.4287857<br>
+										Income Coefficient: -1.9523872<br>
+										Income P-Value: 0.0269760<br>
+										Model R^2: 0.4890</p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+										<h2>2015 Middle School Reading with Disadvantage Index</h2>
+										<p>Intercept: -13.9661267<br>
+										Pollution Coefficient: 0.0226272<br>
+										Pollution P-Value: 0.9243469<br>
+										Income Coefficient: -1.5530435<br>
+										Income P-Value: 0.0050663<br>
+										Model R^2: 0.7184</p>
+									</section>
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+									<section>
+										<h2>2015 Middle School Math with Disadvantage Index</h2>
+										<p>Intercept: -30.5294768<br>
+										Pollution Coefficient: 0.1764161<br>
+										Pollution P-Value: 0.5095783<br>
+										Income Coefficient: -1.5034082<br>
+										Income P-Value: 0.0096990<br>
+										Model R^2: 0.6047</p>
+									</section>
+							</div>
+							<div class="col-12">
+									<section>
+										<header>
+											<h3>Interactive Map</h3>
+										</header>
+										<div class="wrapper">
+											<div id="schoolmap"></div>
+											<div id="schoollegend">
+												<ul style="list-style-type:none">
+													<li>
+														<img class='policon' src="Lab Assets\Capstone\Markers\pin-s-school+ffffb2@2x.png" alt:"Pin type icon of a book and ruler, representing a school. Colored light cream to represent minimal nearby pollution releases."/>
+														<text>Least Pollution</text>
+													</li>
+													<li>
+														<img class='policon' src="Lab Assets\Capstone\Markers\pin-s-school+fed976@2x.png" alt:"Pin type icon of a book and ruler, representing a school. Colored dark cream to represent light nearby pollution releases."/>
+														<text>Little Pollution</text>
+													</li>
+													<li>
+														<img class='policon' src="Lab Assets\Capstone\Markers\pin-s-school+feb24c@2x.png" alt:"Pin type icon of a book and ruler, representing a school. Colored light orange to represent moderate nearby pollution releases."/>
+														<text>Some Pollution</text>
+													</li>
+													<li>
+														<img class='policon' src="Lab Assets\Capstone\Markers\pin-s-school+fd8d3c@2x.png" alt:"Pin type icon of a book and ruler, representing a school. Colored orange to represent heavy nearby pollution releases."/>
+														<text>Notable Pollution</text>
+													</li>
+													<li>
+														<img class='policon' src="Lab Assets\Capstone\Markers\pin-s-school+f03b20@2x.png" alt:"Pin type icon of a book and ruler, representing a school. Colored dark orange to represent very heavy nearby pollution releases."/>
+														<text>High Pollution</text>
+													</li>
+													<li>
+														<img class='policon' src="Lab Assets\Capstone\Markers\pin-s-school+bd0026@2x.png" alt:"Pin type icon of a book and ruler, representing a school. Colored red to represent extreme nearby pollution releases."/>
+														<text>Highest Pollution</text>
+													</li>
+													<li>
+														<svg width="24" height="24">
+															<rect width="22" height="22" stroke="#2b8cbe" stroke-width="1" fill="#2b8cbe" fill-opacity=".4"/>
+														</svg>
+													<text>School Grounds</text>
+													</li>
+													<li>
+														<svg width="24" height="24">
+															<rect width="22" height="22" stroke="#808000" stroke-width="1" fill="#808000" fill-opacity=".4"/>
+														</svg>
+														<text>School Cachement Zone</text>
+													</li>
+												</ul>
+										</div>
+							</div>
+							<div class="col-12">
+									<section>
+										<header>
 											<h3>Discussion</h3>
 										</header>
-										<p>The results of these regressions have been highly mixed in a way that suggests a number of flaws in the current approach. For one, the p-values obtained from the majority of the elementary school readings for p-values are far, far lower than could ever reasonably be expected from the methods used. A very basic pollution model prepared in 2022 from an extremely limited pool of observations was used in combination with 2016-2017 school catchment areas to investigate possible causes for educational outcomes measured in 2014-2015. It makes very little sense to get any p-value below 0.1 through these methods - the goal of this project was set on 'suggesting that a more rigorous analysis may be necessary' from the beginning for a reason. Furthermore, the inconsistency across topics, years, and grade levels suggests that some other phenomena which, in many cases, varies alongside the estimated pollution, might be be having its own correlation with grade results falsely included in that of pollution. Whatever actual correlation the estimated pollution might have with grades, it is unlikely to be as strong or certain as the most extreme outcomes shown at the elementary school level. One possible example of such a missing variable would be the portion of the population living below the poverty line.</p>
-										<p>Also worth considering is the fact that, in all cases in middle schools, pollution was rated as fairly unlikely to truly have the supposed correlation to grades - and said correlation was a positive correlation. This may be further evidence of flaws in the methodology thus far, though it may also simply be a matter of middle schools covering larger areas and having a narrower range of grades than elementary schools, combined with a different range of pollution values due to the differing block groups included. The smaller number of middle schools could, in its own right, adversely effect the statistical analysis, as well.</p>
-										<p>It is also very possible that any relationship that could exist is too complex to be described through a linear equation, and a more nuanced statistical regression which can assess 'critical masses' or breakpoints in the data to see if there are varying levels of apparent effect at varying levels of exposure might be needed. All of these factors must be considered as the project continues, for best results.</p>
-										<p>Originally, individual demographic categories of students were also investigated using a combination of census data and published metrics in the educational outcome data analyzed, and the data relating to these analyses have been retained, but it was found from the results that the methods used to estimate the average conditions of students of specific ethnic groups based on the American Community Survey data does not produce  results which would be considered statistically significant. This is likely due to the facts that blockgroups are comparatively large, heterogeneous units, that the number of children of a given ethnic group was simply being estimated, and the fact that ascribing the mean or median condition across a whole block group to members of a particular subset of it is a logical and statistical fallacy, meaning that the data being used in an attempt to explain educational outcomes were not accurate to the student populations in question in the first place. Additionally, not all schools had data for all student ethnicities, but this may not have been adequately addressed in the code written.
+										<p>These results are strictly provisional, as the design of this project is centered not around making any authoritative statement on the matter, but rather investigating the potential need for a more rigorous study on the matter. Possible causes for 2014 and 2015 educational outcomes have here been investigated using 2014-2015 American Community Survey data and block groups, aggregated using 2016-2017 school catchment areas, and an air pollution model developed based on a survey of a limited sample of Tacoma's streets at different times, on different days, in different months of 2022, using the hazard estimates produced by an off the shelf Plume Labs Flow2 air pollution monitor and data available through the City of Tacoma and Pierce County geospatial data portals. In a full study on the matter, socioeconomic and demographic data would ideally be collected at the school level or an even finer resolution through collaboration with Tacoma Public Schools and community organizations, and a network of air pollution monitors would be dispersed throughout Tacoma to run continuously and concurrently for a prolonged period to generate a robust dataset for various times of day. However, the results produced do seem to point to it being worth such a more rigorous investigation.</p>
+										<p>At the elementary school level, results conform more or less to what would be expected if air pollution in Tacoma had a substantial impact on experienced variation in academic outcomes - out of the 100 point scale of the AYP data, approximately 10-30 points seem accounted for by pollution variation depending on year and subject, which seems to be negatively correlated with good grades, if taken at face value. At the onset of the project, a pollution p-value of between 0.1 and 0.3 was estimated to roughly indicate a high enough chance of pollution having a real correlation with outcomes that a further study would, without a doubt, be worth conducting, while one below 0.1 was identified as a possible sign of unconsidered variables influencing the results. As it stands, Index A produces a mix of scores within the 'goldilocks zone', below that range, and slightly above it at the elementary school level. This is tentatively accepted as evidence that it may be worth a further analysis on the topic, though it would not be enough to reject the null hypothesis that pollution is not a meaningful influencer of grades in Tacoma.</p>
+										<p>However, at the middle school level results differ wildly from expectations and from the threshold for furhter consideration. Not once does the p-value drop below 0.3 at this level. Furthermore, pollution is not negatively but rather positively correlated with academic outcomes. This lack of certainty and counterintuitive outcome raises questions about what might be happening to create such results at the middle school level. Do any effects of pollution fall off by middle school? Is there some unseen variable prejudicing the elementary school or middle school results? Does the different scale of the school polygons distort the results? Does the smaller number of middle schools in Tacoma Public Schools explain the discrepancy in part? Or are there alternative schools one might move onto at the middle school level that would explain the discrepancy? Although they don't seem to indicate a likelihood of pollution reducing grades, these wildly differing results still seem to call for a deeper investigation simply to explain why they are so different from those at the elementary school level.</p>
+										<p>It could be the case that attempting to model a relationship between air pollution and academic performance as a linear equation is simply doomed to fail - that the impact of the pollution increases or decreases at certain critical thresholds. Alternatively, Mullen, Grineski, Collins, and Mendoza (2020) found evidence in their research that poorer schools may display less apparent effects from increases in air pollution than wealthier ones, because the perfomance damage is already being caused through other parts of the lived experience, which may have some explanatory power here. More investigation is needed to properly identify the cause of these discrepancies and what level of actual explanatory power pollution might possess.</p>
+										<p>Originally, individual demographic categories of students were also investigated using a combination of census data and published metrics in the educational outcome data analyzed, and the data relating to these analyses have been retained, but it was found from the results that the methods used to estimate the average conditions of students of specific ethnic groups based on the American Community Survey data does not produce  results which would be considered statistically significant. This is likely due to the facts that blockgroups are comparatively large, heterogeneous units, that the number of children of a given ethnic group was simply being estimated, and the fact that ascribing the mean or median condition across a whole block group to members of a particular subset of it is a logical and statistical fallacy, meaning that the data being used in an attempt to explain educational outcomes were not accurate to the student populations in question in the first place. Additionally, not all schools had data for all student ethnicities, but this may not have been adequately addressed in the code written. As such, analysis at the level of individual demographics or comparison within schools was abandoned well before the implementation of the disadvantage index.
+										</p>
+									</section>
+							</div>
+							<div class="col-12">
+									<section>
+										<header>
+											<h3>References</h3>
+										</header>
+										<p>Mullen, C., Grineski, S., Collins, T., & Mendoza, D. (2020). Effects of PM2.5 on Third Grade Students’ Proficiency in Math and English Language Arts. International Journal of Environmental Research and Public Health, 17. https://doi.org/10.3390/ijerph17186931.
+										</p>
+										<p>
 										</p>
 									</section>
 							</div>
