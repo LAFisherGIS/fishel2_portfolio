@@ -58,19 +58,20 @@ Fixed Elements This section determines all characteristics of the page not alter
 #schoolmap {
   position: relative;
   height: 90vh;
+  font-weight:bold;
 }
 
 .info {
     padding: 2em 2em;
     font: 1em/1.5em Arial, Helvetica, sans-serif;
-    background: var(--backgroundchroma);
+    background: black;
     box-shadow: 0 0 1em rgba(0,0,0,0.2);
     border-radius: 2em;
 }
 
 .info h4 {
     margin: 0 0 1em;
-    color: var(--textchroma);
+    color: white;
 }
 
 #schoollegend {
