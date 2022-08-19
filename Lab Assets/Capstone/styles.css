@@ -102,7 +102,7 @@ input.leaflet-control-layers-selector {
   appearance: radio;
 }
 
-ol{
-  list-style-type: decimal;
+ul{
+  list-style-type: circle;
   margin-left: 2em;
 }
