@@ -105,4 +105,5 @@ input.leaflet-control-layers-selector {
 ul{
   list-style-type: circle;
   margin-left: 2em;
+  padding: 0.1em;
 }
