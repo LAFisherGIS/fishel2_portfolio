@@ -101,3 +101,8 @@ input.leaflet-control-layers-selector {
   -ms-appearance: radio;
   appearance: radio;
 }
+
+ol{
+  list-style-type: decimal;
+  margin-left: 2em;
+}
